@@ -5,7 +5,7 @@ import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import axios from '../../axios-orders';
-import { UsageState } from 'react';
+// import { UsageState } from 'react';
 import Spinner from '../../components/UI/Spinner/Spinner';
 // import Spinner from '../../../src/components/UI/Spinner/Spinner';
 
@@ -139,9 +139,10 @@ class BurgerBuilder extends Component {
       queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
       // queryParams.push(i + '=' + this.state.ingredients[i]);
     }
+    queryParams.push('price=' + this.state.totalPrice);
     console.log(queryParams)
     const queryString = queryParams.join('&');
-    console.log(queryString)
+    // console.log(queryString)
     this.props.history.push({
       pathname: '/checkout',
       search: '?' + queryString
