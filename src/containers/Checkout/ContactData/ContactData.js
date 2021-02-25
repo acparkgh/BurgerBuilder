@@ -52,11 +52,12 @@ class ContactData extends Component {
         <input className={classes.Input} type="text" name="street" placeholder="Street" />
         <input className={classes.Input} type="text" name="postal" placeholder="Postal" />
         <Button btnType="Success" clicked={this.orderHandler}>ORDER</Button>
-    </form>
+      </form>
     );
     if(this.state.loading) {
       form = <Spinner />;
     }
+    
     return (
       <div className={classes.ContactData} >
         <h4>Enter your Contact Data</h4>
