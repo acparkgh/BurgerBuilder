@@ -8,7 +8,7 @@ import Input from '../../../components/UI/Input/Input';
 class ContactData extends Component {
 
   state = {
-    orderForm = {
+    orderForm: {
       name: {
         elementType: 'input',
         elementConfig: {
