@@ -91,17 +91,17 @@ class ContactData extends Component {
         config: this.state.orderForm[key]
       });
     }
+    // console.log(formElementsArray)
 
     let form = (
       <form>        
-        { formElementsArray.map(formElement => {
-          <Input key={formElement.id}
-                 elementType={formElement.config.elementType} 
-                 elementConfig={formElement.config.elementConfig}
-                 value={formElement.config.value}
-          />
-          })  
-        }
+        { formElementsArray.map( formElement => (
+            <Input key={formElement.id}
+                   elementType={formElement.config.elementType} 
+                   elementConfig={formElement.config.elementConfig}
+                   value={formElement.config.value}
+            />
+        ) ) }
         <Button btnType="Success" clicked={this.orderHandler}>ORDER</Button>
       </form>
     );
